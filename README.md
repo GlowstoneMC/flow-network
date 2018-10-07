@@ -1,4 +1,4 @@
-# Flow Network [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)][License] [![Flattr this](http://img.shields.io/badge/flattr-donate-lightgrey.svg?style=flat)][Donate] [![Build Status](https://circleci.com/gh/GlowstoneMC/network)](https://travis-ci.org/flow/network) [![Coverage Status](http://img.shields.io/coveralls/flow/network/develop.svg?style=flat)](https://coveralls.io/r/flow/network)
+# Flow Network [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)][License]  [![Build Status](https://circleci.com/gh/GlowstoneMC/network)](https://travis-ci.org/flow/network) [![Coverage Status](http://img.shields.io/coveralls/flow/network/develop.svg?style=flat)](https://coveralls.io/r/flow/network)
 
 Network library for the Flow collection.
 
@@ -41,8 +41,6 @@ Are you a talented programmer looking to contribute some code? We'd love the hel
 * Please follow the above guidelines for your pull request(s) accepted.
 * For help setting up the project, keep reading!
 
-Love the project? Feel free to donate to help continue development! Flow projects are open-source and powered by community members, like yourself. Without you, we wouldn't be here today!
-
 Don't forget to watch and star our repo to keep up-to-date with the latest Flow development!
 
 ## Usage
@@ -54,18 +52,12 @@ If you're using [Maven](https://maven.apache.org/download.html) to manage projec
         <version>1.2.4</version>
     </dependency>
 
-If you're using Maven Project to manage project dependencies, simply include the following in your `pom.xml` file:
+You will also need to add the Glowstone Maven repository in your `pom.xml` file:
 
     <repository>
         <id>glowstone-repo</id>
-        <url>https://repo.glowstone.net/content/repositories/snapshots/</url>
+        <url>https://repo.glowstone.net/content/repositories/releases/</url>
     </repository>
-
-If you plan on using snapshots and do not already have the snapshot repo in your repository list, you will need to add this as well:
-
-    https://oss.sonatype.org/content/groups/public/
-
-If you'd prefer to manually import the latest .jar file, you can get it [here](https://github.com/flow/network/releases).
 
 ## Version Control
 We've adopted the [git flow branching model](http://nvie.com/posts/a-successful-git-branching-model/) in our projects. The creators of git flow released a [short intro video](http://vimeo.com/16018419) to explain the model.
@@ -80,7 +72,7 @@ Flow Network is licensed under the [MIT License][License]. Basically, you can do
 * All the people behind [Java](http://www.oracle.com/technetwork/java/index.html), [Maven](https://maven.apache.org/), and [Gradle](https://www.gradle.org/).
 
 ## Contact
-Feel free to contact us on [discord](https://discord.gg/TFJqhsC)
+Feel free to contact us on [Discord](https://discord.gg/TFJqhsC)
 
 
 [License]: https://tldrlegal.com/l/mit
