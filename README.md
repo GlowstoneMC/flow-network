@@ -9,7 +9,7 @@ Network library for the Flow collection.
 * [Issues tracker](https://github.com/flow/network/issues)
 
 ## Source Code
-The latest and greatest source can be found here on [GitHub](https://github.com/flow/network). If you are using Git, use this command to clone the project:
+The updated source code is available at[GitHub](https://github.com/flow/network). If you are using Git, use this command to clone the project:
 
     git clone git://github.com/flow/network.git
 
@@ -28,7 +28,7 @@ The following dependencies are only needed if you compiling the tests included w
 * [org.powermock:powermock-module-junit4](https://oss.sonatype.org/#nexus-search;gav~org.powermock~powermock-module-junit4~~~)
 
 ## Building from Source
-This project can be built with the _latest_ [Java Development Kit](http://oracle.com/technetwork/java/javase/downloads) and [Maven](https://maven.apache.org/) or [Gradle](https://www.gradle.org/). Maven and Gradle are used to simplify dependency management, but using either of them is optional.
+This project can be built with the _latest_ [Java Development Kit](http://oracle.com/technetwork/java/javase/downloads) and [Maven](https://maven.apache.org/) or [Gradle](https://www.gradle.org/). Maven and Gradle are used to make dependency management easy, but using either of them is optional.
 
 For Maven, the command `mvn clean package` will build the project and will put the compiled JAR in `target`, and `mvn clean install` will copy it to your local Maven repository.
 
