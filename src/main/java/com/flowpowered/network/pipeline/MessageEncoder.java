@@ -25,32 +25,27 @@ package com.flowpowered.network.pipeline;
 
 import java.util.List;
 
-import com.flowpowered.network.Codec.CodecRegistration;
-import com.flowpowered.network.CodecContext;
-import com.flowpowered.network.Message;
-import com.flowpowered.network.protocol.Protocol;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;
+
+import com.flowpowered.network.Codec.CodecRegistration;
+import com.flowpowered.network.Message;
+import com.flowpowered.network.protocol.Protocol;
 
 /**
  * A {@link MessageToMessageEncoder} which encodes into {@link ByteBuf}s.
  */
 public class MessageEncoder extends MessageToMessageEncoder<Message> {
     private final MessageHandler messageHandler;
-    private CodecContext context;
 
-    public MessageEncoder(final MessageHandler handler) {
-        this.messageHandler = handler;
+    public MessageEncoder(final MessageHandler messageHandler) {
+        this.messageHandler = messageHandler;
     }
 
     @Override
     protected void encode(ChannelHandlerContext ctx, Message message, List<Object> out) throws Exception {
-        if (context == null && messageHandler.getSession() != null) {
-            context = new CodecContext(messageHandler.getSession());
-        }
         final Protocol protocol = messageHandler.getSession().getProtocol();
         final Class<? extends Message> clazz = message.getClass();
         CodecRegistration reg = protocol.getCodecRegistration(message.getClass());
@@ -58,7 +53,7 @@ public class MessageEncoder extends MessageToMessageEncoder<Message> {
             throw new Exception("Unknown message type: " + clazz + ".");
         }
         ByteBuf messageBuf = ctx.alloc().buffer();
-        messageBuf = reg.getCodec().encode(context, messageBuf, message);
+        messageBuf = reg.getCodec().encode(messageBuf, message);
 
         ByteBuf headerBuf = ctx.alloc().buffer();
         headerBuf = protocol.writeHeader(headerBuf, reg, messageBuf);

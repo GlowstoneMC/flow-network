@@ -39,7 +39,7 @@ public interface Codec<T extends Message> {
      * @return the message fully encoded.
      * @throws IOException If any decoding fails on the buffer
      */
-    T decode(CodecContext context, ByteBuf buf) throws IOException;
+    T decode(ByteBuf buffer) throws IOException;
 
     /**
      * Encodes a {@link Message} into a {@link ByteBuffer}.
@@ -49,7 +49,7 @@ public interface Codec<T extends Message> {
      * @return the ByteBuf encoded into
      * @throws IOException If any data on the message fails to encode
      */
-    ByteBuf encode(CodecContext context, ByteBuf buf, T message) throws IOException;
+    ByteBuf encode(ByteBuf buf, T message) throws IOException;
 
     class CodecRegistration {
         private final int opcode;
